@@ -195,5 +195,5 @@ public class SpriteCode : MonoBehaviour
         }
         //-------------------
 
-    }//Github Check
+    }//Github Check 2
 }
