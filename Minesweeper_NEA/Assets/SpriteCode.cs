@@ -195,5 +195,5 @@ public class SpriteCode : MonoBehaviour
         }
         //-------------------
 
-    }//Github Check 2 laptop
+    }//
 }
