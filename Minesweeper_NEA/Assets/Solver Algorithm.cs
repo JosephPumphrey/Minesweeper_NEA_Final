@@ -35,9 +35,10 @@ public class NewBehaviourScript : MonoBehaviour
                             try{if(SeenMatrix[i + x, j + y] == -1){CheckMatrix[i, j] = true;}}
                             catch{}}}}}}
 
+        // 
         for (int i = 0; i < 21; i++) { for (int j = 0; j < 8; j++)
             {
-
+                
 
 
             }}

@@ -83,7 +83,7 @@ public class SpriteCode : MonoBehaviour
         if (Height == CursorHeight & Width == CursorWidth) { cursorhere = true; }
         else { cursorhere = false; }
 
-        if (Input.GetKeyDown("1") & cursorhere & marked == false) {selected = true;}
+        if (Input.GetKeyDown("1") & cursorhere & !marked & !lost) {selected = true;}
 
 
         // Clears area of 0s
