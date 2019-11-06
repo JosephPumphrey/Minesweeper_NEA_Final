@@ -35,7 +35,14 @@ public class NewBehaviourScript : MonoBehaviour
                             try{if(SeenMatrix[i + x, j + y] == -1){CheckMatrix[i, j] = true;}}
                             catch{}}}}}}
 
-        // 
+        //   PLAN
+        //
+        // - Scan each number bordering a covered mine
+        // - Check if each covered mine is in the link arrays
+        // - if link arrays overlap, simply add probabilities
+        // - select one with the highest probability that is closest to the cursor.
+
+        // Scanning Iteration
         for (int i = 0; i < 21; i++) { for (int j = 0; j < 8; j++)
             {
                 
