@@ -39,8 +39,10 @@ public class NewBehaviourScript : MonoBehaviour
         //
         // - Scan each number bordering a covered mine
         // - Check if each covered mine is in the link arrays
-        // - if link arrays overlap, simply add probabilities
+        // - In situations where a link is under causational dispute, simply calculate probabilities.
         // - select one with the highest probability that is closest to the cursor.
+        // - If one depends on another outcome, where probability is affected again by another, leave it. A better, less risky angle will reveal itself
+        // - 
 
         // Scanning Iteration
         for (int i = 0; i < 21; i++) { for (int j = 0; j < 8; j++)
