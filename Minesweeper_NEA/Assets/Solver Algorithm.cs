@@ -21,28 +21,43 @@ public class NewBehaviourScript : MonoBehaviour
         // Creating SeenMatrix[,] and refining
         int[,] SeenMatrix = MineMatrix;
 
-        for (int i = 0; i < 21; i++){for (int j = 0; j < 8; j++)
+        for (int i = 0; i < 21; i++)
+        {
+            for (int j = 0; j < 8; j++)
             {
-                if (!ClearMatrix[i, j]) { SeenMatrix[i, j] = -1; } // This matrix is what the player can see
+                if (!ClearMatrix[i, j])
+                {
+                    SeenMatrix[i, j] = -1;
+                } // This matrix is what the player can see
 
                 CheckMatrix[i, j] = false;
 
-                //Making a matrix showing only the useful tiles
+                //Making a matrix showing only the tiles bordering a covered mine
                 if (SeenMatrix[i, j] >= 1 && SeenMatrix[i, j] <= 8) 
                 {
                     for (int x = -1; x < 1; i++){
-                        for (int y = -1; y < 1; i++){
-                            try{if(SeenMatrix[i + x, j + y] == -1){CheckMatrix[i, j] = true;}}
-                            catch{}}}}}}
+                        for (int y = -1; y < 1; i++)
+                        {
+                            try
+                            {
+                                if (SeenMatrix[i + x, j + y] == -1)
+                                    { CheckMatrix[i, j] = true;}
+                            }
+                            catch{}
+                        }
+                    }
+                }
+            }
+        }
 
-        //   PLAN
-        //
-        // - Scan each number bordering a covered mine
-        // - Check if each covered mine is in the link arrays
-        // - In situations where a link is under causational dispute, simply calculate probabilities.
-        // - select one with the highest probability that is closest to the cursor.
-        // - If one depends on another outcome, where probability is affected again by another, leave it. A better, less risky angle will reveal itself
-        // - 
+        /*   PLAN
+        
+         - Scan each number bordering a covered mine
+         - Check if each covered mine is in the link arrays
+         - In situations where a link is under causational dispute, simply calculate probabilities.
+         - select one with the highest probability that is closest to the cursor.
+         - If one depends on another outcome, where probability is affected again by another, leave it. A better, less risky angle will reveal itself
+        */
 
         // Scanning Iteration
         for (int i = 0; i < 21; i++) { for (int j = 0; j < 8; j++)
