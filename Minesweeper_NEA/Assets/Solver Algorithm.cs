@@ -7,7 +7,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     public int[,] MineMatrix;
     public bool[,] ClearMatrix;
-    bool[,] CheckMatrix;
+    public bool[,] CheckMatrix;
 
     // Start is called before the first frame update
     void Start()
@@ -18,9 +18,10 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Creating SeenMatrix[,] and refining
+        // Creating SeenMatrix[,]
         int[,] SeenMatrix = MineMatrix;
 
+        //Filling in SeenMatrix[], Defining aand filling CheckMatrix[]
         for (int i = 0; i < 21; i++)
         {
             for (int j = 0; j < 8; j++)
@@ -41,7 +42,9 @@ public class NewBehaviourScript : MonoBehaviour
                             try
                             {
                                 if (SeenMatrix[i + x, j + y] == -1)
-                                    { CheckMatrix[i, j] = true;}
+                                {
+                                    CheckMatrix[i, j] = true;
+                                }
                             }
                             catch{}
                         }
@@ -60,11 +63,20 @@ public class NewBehaviourScript : MonoBehaviour
         */
 
         // Scanning Iteration
-        for (int i = 0; i < 21; i++) { for (int j = 0; j < 8; j++)
+        for (int i = 0; i < 21; i++)
+        {
+            for (int j = 0; j < 8; j++)
             {
-                
+                if (CheckMatrix[i, j])
+                {
 
 
-            }}
+
+
+
+
+                }
+            }
+        }
     }
 }
