@@ -28,9 +28,7 @@ public class NewBehaviourScript : MonoBehaviour
         int[][][][] Link_1_4 = default(int[][][][]);
         int[][][][] Link_2_4 = default(int[][][][]);
         int[][][][] Link_3_4 = default(int[][][][]);
-
-
-}
+    }
 
     // Update is called once per frame
     void Update()
