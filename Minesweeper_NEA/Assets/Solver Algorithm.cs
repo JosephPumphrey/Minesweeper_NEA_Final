@@ -9,11 +9,28 @@ public class NewBehaviourScript : MonoBehaviour
     public bool[,] ClearMatrix;
     public bool[,] CheckMatrix;
 
+    // Link Arrays from 2 to 4
+
+    public int[][] Link_1_2;
+    public int[][][] Link_1_3;
+    public int[][][] Link_2_3;
+    public int[][][][] Link_1_4;
+    public int[][][][] Link_2_4;
+    public int[][][][] Link_3_4;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+        // Resetting Link Arrays
+        int[][] Link_1_2 = default(int[][]);
+        int[][][] Link_1_3 = default(int[][][]);
+        int[][][] Link_2_3 = default(int[][][]);
+        int[][][][] Link_1_4 = default(int[][][][]);
+        int[][][][] Link_2_4 = default(int[][][][]);
+        int[][][][] Link_3_4 = default(int[][][][]);
+
+
+}
 
     // Update is called once per frame
     void Update()
